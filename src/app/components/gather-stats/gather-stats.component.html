@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+
+<div>
+  <h1>Performance Optimization</h1>
+  
+  <div *ngIf="message" [ngClass]="getAlertClass()">
+    <p>{{ message }}</p>
+  </div>
+
+  <!-- Form to gather table stats -->
+  <div class="form-container">
+    <h2>Gather Table Stats</h2>
+    <form (ngSubmit)="gatherStats()">
+      <div class="form-group">
+        <label for="schemaName">Schema Name:</label>
+        <input type="text" id="schemaName" [(ngModel)]="schemaName" name="schemaName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tableName">Table Name:</label>
+        <input type="text" id="tableName" [(ngModel)]="tableName" name="tableName" required>
+      </div>
+
+      <button type="submit">Gather Stats</button>
+    </form>
+  </div>
+
+  <!-- Form to schedule stats gathering -->
+  <div class="form-container">
+    <h2>Schedule Stats Gathering</h2>
+    <form (ngSubmit)="scheduleStats()">
+      <div class="form-group">
+        <label for="scheduleSchemaName">Schema Name:</label>
+        <input type="text" id="scheduleSchemaName" [(ngModel)]="scheduleSchemaName" name="scheduleSchemaName" required>
+      </div>
+
+      <button type="submit">Schedule Stats Gathering</button>
+    </form>
+  </div>
+
+  <!-- Message Display as an Alert -->
+
+</div>

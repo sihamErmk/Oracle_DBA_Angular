@@ -1,0 +1,103 @@
+/* Styles pour le conteneur principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Titre du formulaire */
+  .login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #262d6d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Style des labels */
+  .login-container label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Style des champs de saisie */
+  .login-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  .login-container input:focus {
+    border-color: #262d6d;
+    box-shadow: 0 0 8px rgba(83, 82, 185, 0.4);
+  }
+  
+  /* Bouton de connexion */
+  .login-container .btn.login-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #262d6d;
+    border: none ;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .login-container .btn.login-btn:hover {
+    background-color: #262d6d;
+  }
+  
+  /* Style des messages d'erreur */
+  .login-container .error {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Animation pour les erreurs */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 20px;
+    }
+  
+    .login-container h2 {
+      font-size: 20px;
+    }
+  
+    .login-container input {
+      font-size: 14px;
+    }
+  
+    .login-container .btn.login-btn {
+      font-size: 14px;
+    }
+  }
+  

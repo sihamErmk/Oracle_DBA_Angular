@@ -1,0 +1,76 @@
+<app-nav-bar></app-nav-bar>
+<div class="user-management">
+  <h2>Gestion des Rôles</h2>
+
+  <!-- Formulaire pour créer un rôle -->
+  <form [formGroup]="roleForm" (ngSubmit)="createRole()" class="user-form">
+    <h3>Créer un Rôle</h3>
+    <div class="form-group">
+      <label for="name">Nom du Rôle :</label>
+      <input id="name" formControlName="name" />
+    </div>
+    <div class="form-group">
+      <label for="description">Description :</label>
+      <input id="description" formControlName="description" />
+    </div>
+    <button type="submit" class="btn-submit" [disabled]="roleForm.invalid">Créer</button>
+  </form>
+
+  <!-- Liste des Rôles -->
+  <h3>Liste des Rôles</h3>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles; trackBy: trackByRole">
+        <td>{{ role.name }}</td>
+        <td>{{ role.description }}</td>
+        <td>
+          <button class="btn-delete" (click)="deleteRole(role.name)">Supprimer</button>
+          <button class="btn-edit" (click)="togglePrivileges(role)">Voir les privilèges</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Affichage des privilèges du rôle sélectionné -->
+  <div *ngIf="currentRole">
+    <h3>Privilèges de {{ currentRole.name }}</h3>
+    <ul>
+      <li *ngFor="let privilege of rolePrivileges">
+        {{ privilege.name }}
+      </li>
+    </ul>
+
+    <!-- Dropdown pour accorder un privilège -->
+    <div *ngIf="availablePrivileges.length > 0">
+      <label for="privilegeSelect">Sélectionner un privilège à accorder :</label>
+      <select id="privilegeSelect" [(ngModel)]="selectedPrivilege">
+        <option *ngFor="let privilege of availablePrivileges" [value]="privilege">
+          {{ privilege }}
+        </option>
+      </select>
+      <button class="btn-submit" (click)="grantPrivilege(currentRole.name, selectedPrivilege)" [disabled]="!selectedPrivilege">
+        Accorder
+      </button>
+    </div>
+
+    <!-- Dropdown pour révoquer un privilège -->
+    <div *ngIf="currentRole?.privileges?.length > 0">
+      <label for="revokePrivilegeSelect">Sélectionner un privilège à révoquer :</label>
+      <select id="revokePrivilegeSelect" [(ngModel)]="selectedPrivilegeToRevoke">
+        <option *ngFor="let privilege of currentRole.privileges" [value]="privilege.name">
+          {{ privilege.name }}
+        </option>
+      </select>
+      <button class="btn-submit" (click)="revokePrivilege(currentRole.name, selectedPrivilegeToRevoke)" [disabled]="!selectedPrivilegeToRevoke">
+        Révoquer
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+/* Form styling */
+.vpd-policy-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vpd-policy-form div {
+  margin-bottom: 15px;
+}
+
+.vpd-policy-form label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Table styling */
+.vpd-policy-table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.vpd-policy-table th,
+.vpd-policy-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.vpd-policy-table th {
+  background-color: #f4f4f4;
+  font-size: 1.1rem;
+}
+
+.vpd-policy-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.vpd-policy-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .vpd-policy-form {
+    width: 90%;
+  }
+
+  .vpd-policy-table {
+    width: 100%;
+  }
+
+  .vpd-policy-table th,
+  .vpd-policy-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

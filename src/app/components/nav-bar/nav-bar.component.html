@@ -1,0 +1,54 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Menu Hamburger (Mobile) -->
+    <div class="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img alt="" src="" class="" />
+    </div>
+
+    <!-- "Become a Client" and "Login" Buttons -->
+    <div class="buttons">
+      <!-- Gestion des utilisateurs with Sub-buttons -->
+      <div class="dropdown">
+        <button class="btn subscribe-btn">Gestion des utilisateurs</button>
+        <div class="dropdown-content">
+          <button class="btn" routerLink="/user">User</button>
+          <button class="btn" routerLink="/roles">Role</button>
+          <button class="btn" routerLink="/privileges">Privilege</button>
+        </div>
+      </div>
+
+        <button class="btn subscribe-btn"  routerLink="/backup-restore">Sauvegarde et Restauration</button>
+
+
+        <div class="dropdown">
+          <button class="btn subscribe-btn">Sécurité des données</button>
+          <div class="dropdown-content">
+            <button class="btn" routerLink="/tde">TDE</button>
+            <button class="btn"routerLink="/vdp">VDP POLICY</button>
+            <button class="btn "routerLink="/audit">AUDIT</button>
+          </div>
+        </div>
+        <button class="btn subscribe-btn " routerLink="/performances">Surveillance des performances</button>
+
+      <div class="dropdown">
+        <button class="btn subscribe-btn">Optimisation des performances</button>
+          <div class="dropdown-content">
+            <button class="btn" routerLink="/slow-queries">Slow queries</button>
+            <button class="btn"routerLink="/gather-stats">Gather stats</button>
+            
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+</nav>
+
+

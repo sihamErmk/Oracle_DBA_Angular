@@ -1,0 +1,38 @@
+<!-- performance-monitoring.component.html -->
+<app-nav-bar></app-nav-bar>
+<div class="performance-monitoring-container">
+  <div *ngIf="loadingStats" class="loading-spinner">
+    <p>Loading real-time stats...</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="realTimeStats" class="stats-container">
+    <h2>Real-Time Performance Stats</h2>
+    <div class="stat">
+      <p><strong>CPU Usage:</strong> {{ realTimeStats.cpuUsage }}%</p>
+      <p><strong>Memory Usage:</strong> {{ realTimeStats.memoryUsage }}%</p>
+      <p><strong>Disk I/O:</strong> {{ realTimeStats.diskIO }} MB/s</p>
+    </div>
+
+    <!-- Example chart integration -->
+    <div class="chart-container small-chart">
+      <canvas baseChart
+              [datasets]="chartData.datasets"
+              [labels]="chartLabels"
+              [options]="chartOptions"
+              [legend]="true"
+              [type]="'bar'">
+      </canvas>
+    </div>
+
+
+
+    <div class="download-buttons">
+      <button (click)="downloadAwrReport()">Download AWR Report</button>
+      <button (click)="downloadAshReport()">Download ASH Report</button>
+    </div>
+  </div>
+</div>

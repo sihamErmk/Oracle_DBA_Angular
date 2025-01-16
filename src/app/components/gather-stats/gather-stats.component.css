@@ -1,0 +1,158 @@
+/* Conteneur principal */
+div {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+}
+
+/* Titre principal */
+div h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #262d6d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Sous-titres */
+div h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #555555;
+  border-bottom: 2px solid #262d6d;
+  padding-bottom: 5px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 16px;
+  text-align: left;
+}
+
+table thead {
+  background-color: #262d6d;
+  color: #ffffff;
+}
+
+table thead th {
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+table td {
+  padding: 12px;
+}
+
+/* Zone d'entrée et de boutons */
+div input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  width: calc(100% - 22px);
+  max-width: 300px;
+}
+
+div input:focus {
+  border-color: #262d6d;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+div button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #262d6d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+div button:hover {
+  background-color: #262d6d;
+  transform: scale(1.05);
+}
+
+div button:active {
+  transform: scale(0.95);
+}
+
+/* Pré-formaté */
+pre {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333333;
+  overflow-x: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  div {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  table thead {
+    display: none; /* Cacher l'en-tête du tableau sur mobile */
+  }
+
+  table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  table tbody td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  div input {
+    width: 100%;
+  }
+}
+

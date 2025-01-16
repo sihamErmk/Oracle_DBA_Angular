@@ -1,0 +1,46 @@
+
+
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <h1>RMAN Dashboard</h1>
+
+  <!-- Display error message if any -->
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading-indicator">
+    <p>Loading... Please wait.</p>
+    <!-- You can also use a spinner or a simple message -->
+    <!-- Example: <div class="spinner"></div> -->
+  </div>
+
+  <!-- Success message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Action Buttons -->
+  <button class="btn btn-primary" (click)="performFullBackup()" [disabled]="loading">Full Backup</button>
+  <button class="btn btn-warning" (click)="performIncrementalBackup(1)" [disabled]="loading">Incremental Backup (Level 1)</button>
+  <button class="btn btn-warning" (click)="performIncrementalBackup(0)" [disabled]="loading">Incremental Backup (Level 0)</button>
+  <button class="btn btn-success" (click)="performRestore()" [disabled]="loading">Restore</button>
+
+  <h2>Backup  and Restore History</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Backup Type</th>
+        <th>Timestamp</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let backup of backups">
+        <td>{{ backup.type }}</td>
+        <td>{{ backup.timestamp }}</td>
+        <td>{{ backup.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

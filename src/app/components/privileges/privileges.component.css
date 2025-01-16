@@ -1,0 +1,134 @@
+/* General Styles for Privilege Section */
+.privilege-list, .privilege-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.privilege-list h2, .privilege-form h2 {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Privilege List Table Styles */
+.privilege-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.privilege-list th, .privilege-list td {
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.privilege-list th {
+  background-color: #4f70a5;
+  color: white;
+}
+
+.privilege-list tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.privilege-list tr:hover {
+  background-color: #f0f9fe;
+}
+
+.privilege-list td button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.privilege-list td button:hover {
+  background-color: #c0392b;
+}
+
+.privilege-list td button:disabled {
+  background-color: #b0c8e2;
+  cursor: not-allowed;
+}
+
+/* Create Privilege Form Styles */
+.privilege-form form {
+  display: table;
+  width: 100%;
+  border-spacing: 1rem;
+}
+
+.privilege-form label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.privilege-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.privilege-form input:focus {
+  border-color: #4f70a5;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.privilege-form button {
+  background-color: #4f70a5;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.privilege-form button:hover {
+  background-color: #1d4e89;
+}
+
+.privilege-form button:disabled {
+  background-color: #b0c8e2;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .privilege-list, .privilege-form {
+    padding: 1.5rem;
+  }
+
+  .privilege-form form {
+    display: block;
+  }
+
+  .privilege-list td button {
+    padding: 6px 10px;
+  }
+
+  .privilege-form input, .privilege-form button {
+    padding: 10px;
+  }
+}

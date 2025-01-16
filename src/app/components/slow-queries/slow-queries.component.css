@@ -1,0 +1,113 @@
+/* Conteneur */
+.container {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+  
+  /* Titre */
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Table */
+  .table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #1b365c;
+    color: white;
+    font-size: 14px;
+  }
+  
+  td {
+    font-size: 12px;
+    color: #555;
+    word-break: break-word; /* Gère les textes longs */
+  }
+  
+  /* Bouton */
+  /* Bouton */
+button {
+    padding: 0; /* Supprime les marges internes */
+    background-color: #034c9a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    height: 50px; /* Hauteur fixe */
+    line-height: 30px;
+    text-align: center;
+    width: auto; /* Ajuste la largeur au texte */
+    min-width: 70px; /* Optionnel : Assure une largeur minimale */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  /* Responsivité */
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 18px;
+    }
+  
+    th, td {
+      padding: 6px;
+      font-size: 12px;
+    }
+  
+    button {
+      padding: 4px 8px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 5px;
+    }
+  
+    h2 {
+      font-size: 16px;
+    }
+  
+    .table {
+      font-size: 10px;
+    }
+  
+    th, td {
+      display: block;
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+  
+    th::after {
+      content: ":";
+    }
+  
+    button {
+      padding: 3px 6px;
+      font-size: 10px;
+    }
+  }
+  

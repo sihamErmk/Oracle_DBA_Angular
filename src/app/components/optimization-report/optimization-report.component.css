@@ -1,0 +1,102 @@
+/* Styles de base pour le conteneur */
+.container {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f6f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: auto;
+  }
+  
+  /* Style de l'en-tête */
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Style du texte de rapport */
+  pre {
+    background-color: #fff;
+    color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Style du bouton */
+  button {
+    padding: 12px 12px;
+    background-color: #1b365c;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+  }
+  
+  button:hover {
+    background-color: #1b365c;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Responsivité pour les petits écrans (tablettes et écrans moyens) */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    pre {
+      font-size: 13px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Responsivité pour les très petits écrans (smartphones) */
+  @media screen and (max-width: 480px) {
+    .container {
+      margin: 20px;
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    pre {
+      font-size: 12px;
+      padding: 15px;
+    }
+  
+    button {
+      font-size: 12px;
+      padding: 8px 18px;
+    }
+  }
+  

@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <h2>Requêtes Lentes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>SQL ID</th>
+          <th>Texte SQL</th>
+          <th>Temps moyen (ms)</th>
+          <th>Exécutions</th>
+          <th>Dernière activité</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let query of slowQueries">
+          <td>{{ query.sqlId }}</td>
+          <td>{{ query.sqlText }}</td>
+          <td>{{ query.avgExecutionTime }}</td>
+          <td>{{ query.executions }}</td>
+          <td>{{ query.lastActiveTime | date: 'short' }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="optimizeQuery(query.sqlId)">Optimiser</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

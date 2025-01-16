@@ -1,0 +1,241 @@
+/* User Management Styles */
+.user-management {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.user-management h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.user-form {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.user-form h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f70a5; /* Blue border on focus */
+}
+
+.btn-submit {
+  background-color: #4f70a5;
+  color: white;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #134679;
+}
+
+h3 + .user-table {
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #1b365c;
+  color: white;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #e8f0fe;
+}
+
+.user-table td ul {
+  padding-left: 1rem;
+}
+
+.user-table td ul li {
+  margin: 0.5rem 0;
+}
+
+/* Buttons in the user table */
+.btn-edit,
+.btn-delete,
+.btn-lock,
+.btn-unlock {
+  background-color: #4f70a5;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.btn-edit:hover {
+  background-color: #134679;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.btn-lock {
+  background-color: #f39c12;
+}
+
+.btn-lock:hover {
+  background-color: #e67e22;
+}
+
+.btn-unlock {
+  background-color: #2ecc71;
+}
+
+.btn-unlock:hover {
+  background-color: #27ae60;
+}
+
+/* Manage User Roles - Separate Section */
+.roles-table-container {
+  margin-top: 2rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.roles-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.roles-table th,
+.roles-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.roles-table th {
+  background-color: #1b365c;
+  color: white;
+}
+
+.roles-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.roles-table tr:hover {
+  background-color: #e8f0fe;
+}
+
+.roles-table td ul {
+  padding-left: 1rem;
+}
+
+.roles-table td ul li {
+  margin: 0.5rem 0;
+}
+
+.roles-table select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.roles-table button {
+  background-color: #4f70a5;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.roles-table button:hover {
+  background-color: #134679;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .user-management {
+    padding: 1.5rem;
+  }
+
+  .user-form {
+    padding: 1.5rem;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 0.8rem;
+  }
+
+  .roles-table th,
+  .roles-table td {
+    padding: 0.8rem;
+  }
+}

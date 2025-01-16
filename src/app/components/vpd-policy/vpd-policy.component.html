@@ -1,0 +1,92 @@
+
+
+<app-nav-bar></app-nav-bar>
+
+<h2>VPD Policies</h2>
+
+<!-- Form to create a new VPD policy -->
+<form [formGroup]="policyForm" (ngSubmit)="createVPDPolicy()" class="vpd-policy-form">
+  <div>
+    <label for="policyName">Policy Name</label>
+    <input
+      id="policyName"
+      formControlName="policyName"
+      type="text"
+      placeholder="Enter policy name"
+      class="input-field"
+    />
+  </div>
+
+
+
+  <div>
+    <label for="tableName">Table Name</label>
+    <input
+      id="tableName"
+      formControlName="tableName"
+      type="text"
+      placeholder="Enter table name"
+      class="input-field"
+    />
+  </div>
+
+  <div>
+    <label for="functionName">Function Name</label>
+    <input
+      id="functionName"
+      formControlName="functionName"
+      type="text"
+      placeholder="Enter function name"
+      class="input-field"
+    />
+  </div>
+
+  <div>
+    <label for="policyFunction">Policy Function</label>
+    <textarea
+      id="policyFunction"
+      formControlName="policyFunction"
+      placeholder="Enter policy function"
+      class="input-field"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="statementTypes">Statement Types</label>
+    <select
+      id="statementTypes"
+      formControlName="statementTypes"
+      class="input-field"
+    >
+      <option value="SELECT">SELECT</option>
+      <option value="INSERT">INSERT</option>
+      <option value="UPDATE">UPDATE</option>
+      <option value="DELETE">DELETE</option>
+      <option value="SELECT,INSERT,UPDATE,DELETE">ALL</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="policyForm.invalid || isSubmitting" class="submit-btn">
+    {{ isSubmitting ? 'Creating...' : 'Create Policy' }}
+  </button>
+</form>
+
+<!-- Table to display existing VPD policies -->
+<table class="vpd-policy-table">
+  <thead>
+    <tr>
+      <th>Policy Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policy of vpdPolicies">
+      <td>{{ policy.policyName }}</td>
+      <td>{{ policy.description }}</td>
+      <td>
+        <button (click)="deleteVPDPolicy(policy.policyName)" class="delete-btn">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

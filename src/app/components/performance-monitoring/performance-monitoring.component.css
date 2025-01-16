@@ -1,0 +1,94 @@
+/* Container styling */
+.performance-monitoring-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Slightly lighter for better contrast */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Increased shadow for better elevation */
+  margin: 20px;
+}
+
+/* Centered stats section */
+.stats-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2c3e50; /* Slightly darker for improved readability */
+  margin-bottom: 20px;
+}
+
+/* Stat text styling */
+.stat {
+  margin: 15px 0;
+  font-size: 1.2em; /* Slightly larger font size */
+  color: #444;
+}
+
+.stat p {
+  margin: 5px 0;
+}
+
+/* Error message styling */
+.error-message {
+  color: #e74c3c; /* Brighter red for error visibility */
+  font-weight: bold;
+}
+
+/* Chart container styling */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Added gap for better spacing */
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ffffff; /* Added background for better chart contrast */
+}
+
+/* Chart canvas styles */
+.small-chart canvas {
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  border: 2px solid #1b365c;
+  border-radius: 5px;
+}
+
+/* Download buttons container */
+.download-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px; /* Added gap for consistent spacing */
+}
+
+/* Button styling */
+.download-buttons button {
+  background-color: #1b365c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px; /* Slightly larger padding for a modern look */
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-buttons button:hover {
+  background-color: #16334e;
+  transform: scale(1.05); /* Added a subtle zoom effect */
+}
+
+/* Loading spinner text styling */
+.loading-spinner {
+  text-align: center;
+  font-size: 1.3em; /* Slightly larger for visibility */
+  color: #1b365c;
+  font-weight: 600;
+  margin: 20px 0;
+}

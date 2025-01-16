@@ -1,0 +1,98 @@
+<app-nav-bar></app-nav-bar>
+<div class="user-management">
+  <h2>User Management</h2>
+
+  <!-- User Form Section -->
+  <div class="user-form card">
+    <h3>Create User</h3>
+    <form [formGroup]="userForm" (ngSubmit)="createUser()">
+      <!-- Form Inputs -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" placeholder="Enter username" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" type="password" placeholder="Enter password" />
+      </div>
+      <div class="form-group">
+        <label for="defaultTablespace">Default Tablespace:</label>
+        <input id="defaultTablespace" formControlName="defaultTablespace" placeholder="Enter default tablespace" />
+      </div>
+      <div class="form-group">
+        <label for="temporaryTablespace">Temporary Tablespace:</label>
+        <input id="temporaryTablespace" formControlName="temporaryTablespace" placeholder="Enter temporary tablespace" />
+      </div>
+      <div class="form-group">
+        <label for="quotaLimit">Quota Limit:</label>
+        <input id="quotaLimit" formControlName="quotaLimit" placeholder="Enter quota limit" />
+      </div>
+      <button class="btn-submit" type="submit" [disabled]="userForm.invalid">Create User</button>
+    </form>
+  </div>
+
+  <!-- Users Table Section -->
+  <h3>Users</h3>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Default Tablespace</th>
+        <th>Temporary Tablespace</th>
+        <th>Quota Limit</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.defaultTablespace }}</td>
+        <td>{{ user.temporaryTablespace }}</td>
+        <td>{{ user.quotaLimit }}</td>
+        <td>
+          <button class="btn-delete" (click)="deleteUser(user.username)">Delete</button>
+          <button class="btn-lock" (click)="lockAccount(user.username)">Lock Account</button>
+          <button class="btn-unlock" (click)="unlockAccount(user.username)">Unlock Account</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- User Roles Management Section -->
+  <h3>Manage User Roles</h3>
+  <div class="roles-table-container">
+    <table class="roles-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Assigned Roles</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let role of user.roles">{{ role.name }}</li>
+            </ul>
+          </td>
+          <td>
+            <!-- Dropdown to grant a new role -->
+            <select (change)="grantRole(user.username, $event)">
+              <option value="">Select a role</option>
+              <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+            </select>
+
+            <!-- Button to revoke a role -->
+            <button class="btn-revoke" *ngFor="let role of user.roles" (click)="revokeRole(user.username, role.name)">
+              Revoke Role
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

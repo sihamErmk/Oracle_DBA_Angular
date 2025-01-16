@@ -1,0 +1,66 @@
+
+<app-nav-bar></app-nav-bar>
+
+
+<h2>TDE Configurations</h2>
+<form (ngSubmit)="enableTDE()" class="tde-form">
+  <div class="form-group">
+    <label for="tableName">Table Name</label>
+    <input
+      [(ngModel)]="tableName"
+      name="tableName"
+      id="tableName"
+      placeholder="Table Name"
+      required
+      class="form-input"
+    />
+  </div>
+  <div class="form-group">
+    <label for="columnName">Column Name</label>
+    <input
+      [(ngModel)]="columnName"
+      name="columnName"
+      id="columnName"
+      placeholder="Column Name"
+      required
+      class="form-input"
+    />
+  </div>
+  <div class="form-group">
+    <label for="algorithm">Algorithm</label>
+    <input
+      [(ngModel)]="algorithm"
+      name="algorithm"
+      id="algorithm"
+      placeholder="Algorithm"
+      required
+      class="form-input"
+    />
+  </div>
+  <button type="submit" class="submit-btn">Enable TDE</button>
+</form>
+
+<table class="tde-table">
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Algorithm</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let config of tdeConfigs">
+      <td>{{ config.tableName }}</td>
+      <td>{{ config.columnName }}</td>
+      <td>{{ config.encryptionAlgorithm }}</td>
+      <td>
+        <button (click)="disableTDE(config.tableName, config.columnName, config.encryptionAlgorithm)" class="disable-btn">
+          Disable
+        </button>
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>

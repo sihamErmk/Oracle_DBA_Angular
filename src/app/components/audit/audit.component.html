@@ -1,0 +1,42 @@
+<app-nav-bar></app-nav-bar>
+<h2>Audit Configuration</h2>
+
+<!-- Button to enable auditing for a table -->
+<div>
+  <h3>Enable Auditing</h3>
+  <form (ngSubmit)="enableAuditing(selectedConfig)">
+    <!-- Add form fields as needed to select or define a table -->
+    <input type="text" [(ngModel)]="selectedConfig.tableName" name="tableName" placeholder="Table Name" required>
+    <button type="submit" [disabled]="isSubmitting">Enable Auditing</button>
+  </form>
+</div>
+
+<!-- Button to disable auditing for a table -->
+<div>
+  <h3>Disable Auditing</h3>
+  <form (ngSubmit)="disableAuditing(selectedTable)">
+    <input type="text" [(ngModel)]="selectedTable" name="tableName" placeholder="Table Name" required>
+    <button type="submit" [disabled]="isSubmitting">Disable Auditing</button>
+  </form>
+</div>
+
+<!-- Display current audit configurations -->
+<h3>Current Audit Configurations</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Table Name</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let config of auditConfigs">
+      <td>{{ config.tableName }}</td>
+      <td>{{ config.status }}</td>
+      <td>
+        <button (click)="disableAuditing(config.tableName)">Disable</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

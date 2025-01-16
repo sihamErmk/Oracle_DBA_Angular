@@ -1,0 +1,44 @@
+
+<app-nav-bar></app-nav-bar>
+
+<div class="privilege-list">
+  <h2>Privileges</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let privilege of privileges">
+        <td>{{ privilege.name }}</td>
+        <td>{{ privilege.description }}</td>
+        <td>
+          <button (click)="deletePrivilege(privilege.name)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="privilege-form">
+  <h2>Create Privilege</h2>
+  <form (ngSubmit)="createPrivilege()">
+    <table>
+      <tr>
+        <td><label for="name">Name:</label></td>
+        <td><input id="name" [(ngModel)]="privilege.name" name="name" required /></td>
+      </tr>
+      <tr>
+        <td><label for="description">Description:</label></td>
+        <td><input id="description" [(ngModel)]="privilege.description" name="description" /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit">Create</button>
+        </td>
+      </tr>
+    </table>
+  </form>
